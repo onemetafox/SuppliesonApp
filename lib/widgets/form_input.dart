@@ -15,6 +15,7 @@ class FormInput extends StatelessWidget {
   final String initialValue;
   final String hintText;
   final double textFieldHeight;
+  final int maxTextFieldLength ;
 final TextEditingController controller ;
   FormInput({
     @required this.label,
@@ -23,6 +24,7 @@ final TextEditingController controller ;
     this.prefixIcon,
     this.suffixIcon,
     this.key,
+    this.maxTextFieldLength=100,
     this.controller ,
     this.errorText,
     @required this.onChanged,
@@ -52,8 +54,10 @@ final TextEditingController controller ;
           controller:  controller,
           decoration: InputDecoration(
             filled: true,
+          counterText: "",
             fillColor: primaryColor.withOpacity(0.2),
             border: OutlineInputBorder(
+
               borderRadius: BorderRadius.circular(Dimensions.pixels_10),
               borderSide: BorderSide(width: 0, style: BorderStyle.none),
             ),
@@ -64,11 +68,13 @@ final TextEditingController controller ;
             errorText: errorText,
             errorMaxLines: 3,
             hintText: hintText,
+
           ),
           style: TextStyle(fontSize: Dimensions.pixels_18, letterSpacing: 0.7),
           obscureText: obscureText,
           keyboardType: keyboardType,
           key: key,
+          maxLength: maxTextFieldLength,
           onChanged: onChanged,
           initialValue: initialValue,
         ),

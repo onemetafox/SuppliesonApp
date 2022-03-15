@@ -22,6 +22,7 @@ class ProductsPage extends StatelessWidget with BaseClass {
           selectedProduct,
           style: GoogleFonts.roboto(color: Colors.white),
         ),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -279,7 +279,7 @@ mixin BaseClass {
   void showCircularDialog(BuildContext context) {
     showDialog(
 
-      barrierDismissible: false,
+      barrierDismissible: true,
       context: context,
       builder: (BuildContext context) => ProgressDialog(),
     );

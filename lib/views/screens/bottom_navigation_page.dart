@@ -1,6 +1,8 @@
 
 import 'package:customer_end/utils/baseClass.dart';
 import 'package:customer_end/utils/widget_dimensions.dart';
+import 'package:customer_end/views/screens/orders_module/current_order_page.dart';
+import 'package:customer_end/views/screens/supplier_list/supplier_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:rolling_nav_bar/rolling_nav_bar.dart';
 
@@ -29,8 +31,9 @@ class _HomeBasePageState extends State<HomeBasePage> with BaseClass {
         body: IndexedStack(
           index: _selectedIndex,
           children: <Widget>[
-            BottomHomePage(),
-            BottomOrderPage(),
+            /*BottomHomePage()*/SuppliersListPage(),
+            /*BottomOrderPage()*/CurrentOrderPage(),
+
             BottomNotificationPage(),
             AccountPage(),
             BottomMorePage(),

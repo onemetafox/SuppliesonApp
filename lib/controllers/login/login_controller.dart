@@ -8,9 +8,14 @@ class LoginController extends GetxController{
     super.onInit();
   }
 
-  Future<LoginModel> loginApi(Map<String, dynamic> params) async {
+  Future<LoginModel> loginApi(Map<String, String> params) async {
     try {
       print(params);
+      /*final response = await ApiService.postWithQueryParameter(
+        "login",
+        params: params,
+      );
+      */
       final response = await ApiService.post(
         "auth/login",
         params: params,
@@ -18,6 +23,7 @@ class LoginController extends GetxController{
       print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
+      print(error.toString());
       throw error.toString();
     }
   }

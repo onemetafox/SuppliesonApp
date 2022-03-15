@@ -1,4 +1,3 @@
-
 import 'package:customer_end/utils/app_colors.dart';
 import 'package:customer_end/utils/app_strings.dart';
 import 'package:customer_end/utils/app_validator.dart';
@@ -9,6 +8,7 @@ import 'package:customer_end/views/screens/register_step_two/regiter_step_two.da
 import 'package:customer_end/widgets/form_input.dart';
 import 'package:customer_end/widgets/rounded_edge_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegisterPage extends StatelessWidget with BaseClass {
   final FocusNode _phoneNumberNode = FocusNode();
@@ -23,7 +23,8 @@ class RegisterPage extends StatelessWidget with BaseClass {
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _fullNameController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
   final bool isTerms = false;
 
   @override
@@ -78,7 +79,7 @@ class RegisterPage extends StatelessWidget with BaseClass {
                       FormInput(
                         label: "Last Name*",
                         onChanged: (value) {},
-                        controller:  _lastNameController,
+                        controller: _lastNameController,
                         focusNode: _lastNameNode,
                         prefixIcon: Icon(
                           Icons.person,
@@ -92,7 +93,7 @@ class RegisterPage extends StatelessWidget with BaseClass {
                         label: "Email*",
                         onChanged: (value) {},
                         focusNode: _emailNode,
-                        controller:  _emailController,
+                        controller: _emailController,
                         prefixIcon: Icon(
                           Icons.phone,
                           color: primaryColor,
@@ -104,8 +105,11 @@ class RegisterPage extends StatelessWidget with BaseClass {
                       FormInput(
                         label: "Mobile*",
                         onChanged: (value) {},
-                        controller:  _phoneNumberController,
+                        controller: _phoneNumberController,
                         focusNode: _phoneNumberNode,
+                        maxTextFieldLength: 8,
+                        keyboardType:
+                            TextInputType.numberWithOptions(decimal: false),
                         prefixIcon: Icon(
                           Icons.phone,
                           color: primaryColor,
@@ -117,7 +121,7 @@ class RegisterPage extends StatelessWidget with BaseClass {
                       FormInput(
                         label: "Password",
                         onChanged: (value) {},
-                        controller:  _passwordController,
+                        controller: _passwordController,
                         obscureText: true,
                         focusNode: _passwordNode,
                         prefixIcon: Icon(
@@ -131,7 +135,7 @@ class RegisterPage extends StatelessWidget with BaseClass {
                       FormInput(
                         label: "Confirm password",
                         onChanged: (value) {},
-                        controller:  _confirmPasswordController,
+                        controller: _confirmPasswordController,
                         obscureText: true,
                         focusNode: _confirmPassword,
                         prefixIcon: Icon(
@@ -139,7 +143,7 @@ class RegisterPage extends StatelessWidget with BaseClass {
                           color: primaryColor,
                         ),
                       ),
-                    /*  Container(
+                      /*  Container(
                         alignment: Alignment.topRight,
                         padding: EdgeInsets.all(Dimensions.pixels_8),
                         child: Row(
@@ -179,14 +183,14 @@ class RegisterPage extends StatelessWidget with BaseClass {
                             if (AppValidator.isEmptyValidate(
                                 _fullNameController.text.trim())) {
                               showError(
-                                  title: AppStrings.ERROR, message: AppStrings.NAME_ERROR);
-                            }
-                           else if (AppValidator.isEmptyValidate(
+                                  title: AppStrings.ERROR,
+                                  message: AppStrings.NAME_ERROR);
+                            } else if (AppValidator.isEmptyValidate(
                                 _lastNameController.text.trim())) {
                               showError(
-                                  title: AppStrings.ERROR, message: AppStrings.LAST_NAME_ERROR);
-                            }
-                            else if (AppValidator.isEmptyValidate(
+                                  title: AppStrings.ERROR,
+                                  message: AppStrings.LAST_NAME_ERROR);
+                            } else if (AppValidator.isEmptyValidate(
                                 _emailController.text.trim())) {
                               showError(
                                 title: AppStrings.ERROR,
@@ -197,16 +201,13 @@ class RegisterPage extends StatelessWidget with BaseClass {
                               showError(
                                   title: AppStrings.ERROR,
                                   message: AppStrings.EMAIL_FORMAT_ERROR);
-                            }
-                            else if (AppValidator.isEmptyValidate(
+                            } else if (AppValidator.isEmptyValidate(
                                 _phoneNumberController.text.trim())) {
                               showError(
                                 title: AppStrings.ERROR,
                                 message: AppStrings.MOBILE_ERROR,
                               );
-                            }
-
-                            else if (AppValidator.isEmptyValidate(
+                            } else if (AppValidator.isEmptyValidate(
                                 _passwordController.text.trim())) {
                               showError(
                                   title: AppStrings.ERROR,
@@ -221,9 +222,23 @@ class RegisterPage extends StatelessWidget with BaseClass {
                                 _confirmPasswordController.text.trim())) {
                               showError(
                                   title: AppStrings.ERROR,
-                                  message: AppStrings.PASSWORD_CONFIRMATION_ERROR);
+                                  message:
+                                      AppStrings.PASSWORD_CONFIRMATION_ERROR);
+                            } else if(_phoneNumberController.text.trim().length!=8){
+                              showError(
+                                  title: AppStrings.ERROR,
+                                  message:
+                                  'Phone number must be of 8 digits');
+                          } else{
+                              Get.to(() => RegisterStepTwo(
+                                    firstName: _fullNameController.text.trim(),
+                                    lastName: _lastNameController.text.trim(),
+                                    email: _emailController.text.trim(),
+                                    mobileNumber: _phoneNumberController.text.trim(),
+                                    password: _passwordController.text.trim(),
+                                    confirmPassword: _confirmPasswordController.text.trim(),
+                                  ));
                             }
-                            pushToNextScreen(context: context, destination: RegisterStepTwo());
                           },
                           context: context),
                       SizedBox(

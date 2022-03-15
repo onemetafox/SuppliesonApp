@@ -80,14 +80,15 @@ class LoginPage extends StatelessWidget with BaseClass {
                                   height: Dimensions.pixels_30,
                                 ),
                                 FormInput(
-                                  label: "Phone Number",
+                                  /*label: "Phone Number",*/
+                                  label: "Email",
                                   onChanged: (value) {},
                                   controller: _phoneNumberController,
                                   focusNode: _phoneNumberNode,
                                   keyboardType: TextInputType.numberWithOptions(
                                       decimal: false),
                                   prefixIcon: Icon(
-                                    Icons.phone,
+                                    Icons.mail,
                                     color: primaryColor,
                                   ),
                                 ),
@@ -141,8 +142,10 @@ class LoginPage extends StatelessWidget with BaseClass {
                                       if (_phoneNumberController.text
                                           .trim()
                                           .isEmpty) {
-                                        showError(title: 'Phone number',
-                                            message: 'Phone number cannot empty');
+                                        /*showError(title: 'Phone number',
+                                            message: 'Phone number cannot empty');*/
+                                        showError(title: 'Email',
+                                            message: 'Email cannot empty');
                                       }
                                       else if (_passwordController.text
                                           .trim()
@@ -182,7 +185,7 @@ class LoginPage extends StatelessWidget with BaseClass {
 
                                           getSharedPref.saveSharedPreference(userDataModel);
 
-                                          pushToNextScreenWithFadeAnimation(context: context, destination: HomeBasePage());
+                                          pushReplaceAndClearStack(context: context, destination: HomeBasePage());
                                           showSuccess(title: 'Success', message: 'Logged in successfully');
                                         }
                                         catch(error){

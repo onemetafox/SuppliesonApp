@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:customer_end/controllers/user_data/get_shared_pref.dart';
 import 'package:customer_end/custom_paint_widgets/home_custom_paint.dart';
+import 'package:customer_end/models/user_data/user_model.dart';
 
 import 'package:customer_end/utils/app_colors.dart';
 import 'package:customer_end/utils/app_images.dart';
@@ -15,6 +16,10 @@ class BottomHomePage extends StatelessWidget with BaseClass {
   final GetSharedPref getSharedPref = Get.isRegistered<GetSharedPref>()
       ? Get.find<GetSharedPref>()
       : Get.put(GetSharedPref());
+  void getUserModel() async{
+   var  userDataModel = await getSharedPref.getUserData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

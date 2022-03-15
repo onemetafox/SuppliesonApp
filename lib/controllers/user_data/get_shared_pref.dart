@@ -23,7 +23,11 @@ class GetSharedPref extends GetxController {
 
     update();
   }
-
+   Future<UserDataModel>getUserData() async {
+     SharedPreferences pref = await SharedPreferences.getInstance();
+     UserDataModel userDataModel = decode(pref.getString("userData"));
+     return userDataModel;
+   }
   String getToken(){
     print(_userDataModel.authToken);
     return _userDataModel.authToken;
