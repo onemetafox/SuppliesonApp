@@ -10,7 +10,7 @@ class LoginController extends GetxController{
 
   Future<LoginModel> loginApi(Map<String, String> params) async {
     try {
-      print(params);
+      // print(params);
       /*final response = await ApiService.postWithQueryParameter(
         "login",
         params: params,
@@ -20,10 +20,10 @@ class LoginController extends GetxController{
         "auth/login",
         params: params,
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
-      print(error.toString());
+      // print(error.toString());
       throw error.toString();
     }
   }

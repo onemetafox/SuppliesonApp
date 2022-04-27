@@ -19,7 +19,7 @@ class ProductsAsPerCategoryController extends GetxController {
       final response = await ApiService.get(
           "categories/products/$categoryId?skip=0&limit=9&supplierId=$supplierId",
           headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
-      print(response);
+      // print(response);
       productListModel = ProductListModel.fromJson(response);
       update();
     } catch (e) {

@@ -5,12 +5,12 @@ import 'package:get/get.dart';
 class GetCartByCartIdController extends GetxController {
   Future<void> getCartByIdApi(Map<String, String> params, String cartId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.post(
         "carts/$cartId",
         params: params,
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

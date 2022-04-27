@@ -6,12 +6,12 @@ class UpdateCartProductController extends GetxController {
   Future<void> updateCartProductApi(
       Map<String, String> params, String productId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.put(
         "carts/product/$productId",
         params: params,
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

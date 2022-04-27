@@ -7,12 +7,12 @@ class DeleteCategoryController extends GetxController {
 
   Future<void> deleteCategoryApi(Map<String, String> params,String categoryId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.delete(
         "categories/$categoryId",
         params: params,
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

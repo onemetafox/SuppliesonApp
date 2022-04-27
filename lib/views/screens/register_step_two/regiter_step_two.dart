@@ -121,7 +121,7 @@ class _RegisterStepTwoState extends State<RegisterStepTwo> with BaseClass {
                       InkWell(
                         onTap: () {
                           ShowCustomDatePicker().showDatePicker(context, (val) {
-                            print(val.toString());
+                            // print(val.toString());
                             _selectedData = val.toString() ;
                             setState(() {
 
@@ -478,7 +478,7 @@ class _RegisterStepTwoState extends State<RegisterStepTwo> with BaseClass {
         }
         setState(() {});
       } else {
-        print('No image selected.');
+        // print('No image selected.');
       }
     });
   }
@@ -496,7 +496,7 @@ class _RegisterStepTwoState extends State<RegisterStepTwo> with BaseClass {
         }
         setState(() {});
       } else {
-        print('No image selected.');
+        // print('No image selected.');
       }
     });
   }

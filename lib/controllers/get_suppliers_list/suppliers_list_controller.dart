@@ -17,7 +17,7 @@ class GetSuppliersListController extends GetxController {
       final response = await ApiService.get("suppliers", headerMap: {
         'Authorization': 'Bearer ${userDataModel.authToken}'
       });
-      print(response);
+      // print(response);
       suppliersListModel = SuppliersListModel.fromJson(response);
       update();
     } catch (e) {

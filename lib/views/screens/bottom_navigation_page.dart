@@ -63,7 +63,7 @@ class _HomeBasePageState extends State<HomeBasePage> with BaseClass {
             _selectedIndex = selectedIndex;
           });
 
-          print(_selectedIndex);
+          // print(_selectedIndex);
         },
         // A list of length one implies the same color for all icons
         iconColors: <Color>[

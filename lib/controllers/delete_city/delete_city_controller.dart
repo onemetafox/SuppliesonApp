@@ -8,11 +8,11 @@ class DeleteCityController extends GetxController {
     String cityId,
   ) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.delete(
         "systemCities/$cityId",
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

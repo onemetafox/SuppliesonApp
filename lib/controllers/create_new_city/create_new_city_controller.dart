@@ -6,11 +6,11 @@ class CreateNewCityController extends GetxController {
   Future<void> createNewListApi(
       Map<String, String> params) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.post(
         "systemCities",
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

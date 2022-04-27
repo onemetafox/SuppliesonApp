@@ -11,14 +11,14 @@ class RegisterController extends GetxController {
 
   Future<void> registerApi(Map<String, String> params) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.postWithQueryParameter(
         "suppliers",
         params: params,
       );
 
     } catch (error) {
-      print(error);
+      // print(error);
       throw error.toString();
     }
   }

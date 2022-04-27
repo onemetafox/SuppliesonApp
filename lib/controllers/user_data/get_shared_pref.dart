@@ -29,7 +29,7 @@ class GetSharedPref extends GetxController {
      return userDataModel;
    }
   String getToken(){
-    print(_userDataModel.authToken);
+    // print(_userDataModel.authToken);
     return _userDataModel.authToken;
   }
 

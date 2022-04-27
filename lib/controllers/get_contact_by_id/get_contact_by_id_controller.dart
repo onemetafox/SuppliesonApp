@@ -7,11 +7,11 @@ class GetContactByIdController extends GetxController {
 
   Future<void> getContactByIdApi(Map<String, String> params,String contactId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.get(
         "contacts/$contactId",
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

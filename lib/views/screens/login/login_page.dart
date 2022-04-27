@@ -166,13 +166,13 @@ class LoginPage extends StatelessWidget with BaseClass {
 
                                           Get.back();
                                           UserDataModel userDataModel = UserDataModel();
-                                          print(loginModel.firstName);
-                                          print(loginModel.lastName);
-                                          print(loginModel.email);
-                                          print(loginModel.type);
-                                          print(loginModel.mobileNumber);
-                                          print(loginModel.token);
-                                          print(loginModel.language);
+                                          // print(loginModel.firstName);
+                                          // print(loginModel.lastName);
+                                          // print(loginModel.email);
+                                          // print(loginModel.type);
+                                          // print(loginModel.mobileNumber);
+                                          // print(loginModel.token);
+                                          // print(loginModel.language);
                                           userDataModel.isLoggedIn =true ;
                                           userDataModel.firstName = loginModel.firstName ;
                                           userDataModel.lastName = loginModel.lastName;
@@ -190,7 +190,7 @@ class LoginPage extends StatelessWidget with BaseClass {
                                         }
                                         catch(error){
                                           Get.back();
-                                          print(error.toString());
+                                          // print(error.toString());
                                           showError(title: 'Error', message: error.toString());
                                         }
                                       }

@@ -7,12 +7,12 @@ class CreateNewProductsController extends GetxController {
 
   Future<void> createNewProductsApi(Map<String, String> params,String categoryId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.post(
         "categories",
         params: params,
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

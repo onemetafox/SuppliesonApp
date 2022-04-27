@@ -7,12 +7,12 @@ class GetCityListController extends GetxController {
 
   Future<void> getCityListApi(Map<String, String> params) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.get(
         "systemCities",
 
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

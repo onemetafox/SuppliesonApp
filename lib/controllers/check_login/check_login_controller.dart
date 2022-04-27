@@ -15,7 +15,7 @@ class CheckLoginController extends GetxController {
       var result =
           UserDataModel.fromJson(json.decode(prefs.getString("userData")));
 
-      print(result.isLoggedIn);
+      // print(result.isLoggedIn);
       if (result.isLoggedIn == null || result.isLoggedIn == false) {
         Get.offAll(() => LoginPage());
 

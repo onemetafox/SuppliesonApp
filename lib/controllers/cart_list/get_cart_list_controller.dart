@@ -20,11 +20,11 @@ class GetCartListController extends GetxController {
         "carts",
         headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'},
       );
-      print(response);
+      // print(response);
       cartListModel = CartListModel.fromJson(response);
       update();
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       throw e.toString();
     }
   }
@@ -39,7 +39,7 @@ class GetCartListController extends GetxController {
         "carts/product/$productId",
         headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'},
       );
-      print(response);
+      // print(response);
       cartListModel.data.elementAt(0).cart.products.removeAt(index);
       update();
     } catch (error) {
@@ -58,7 +58,7 @@ class GetCartListController extends GetxController {
         "carts/product/$productId?quantity=$count",
         headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'},
       );
-      print(response);
+      // print(response);
       cartListModel.data.elementAt(0).cart.products.removeAt(index);
       update();
     } catch (error) {

@@ -8,7 +8,7 @@ import '../user_data/get_shared_pref.dart';
 class AddProductToCartController extends GetxController {
   Future<void> addProductToCartApi(Map<String, String> params) async {
     try {
-      print(params);
+      // print(params);
       final GetSharedPref getSharedPref = Get.isRegistered<GetSharedPref>()
           ? Get.find<GetSharedPref>()
           : Get.put(GetSharedPref());
@@ -16,7 +16,7 @@ class AddProductToCartController extends GetxController {
       final response = await ApiService.post("carts",
           params: params,
           headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
-      print(response);
+      // print(response);
       update();
       //  return LoginModel.fromJson(response);
     } catch (error) {

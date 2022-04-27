@@ -12,16 +12,16 @@ class CheckOutCartController extends GetxController {
           ? Get.find<GetSharedPref>()
           : Get.put(GetSharedPref());
       UserDataModel userDataModel = await getSharedPref.getUserData();
-      print(cartId);
-      print(branchId);
-      print('Bearer ${userDataModel.authToken}');
+      // print(cartId);
+      // print(branchId);
+      // print('Bearer ${userDataModel.authToken}');
       final response = await ApiService.postWithQueryParameter(
         "carts/checkout/$cartId?branchId=$branchId",
         headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'},
       );
-      print(response);
+      // print(response);
     } catch (error) {
-      print(error.toString());
+      // print(error.toString());
       throw error.toString();
     }
   }

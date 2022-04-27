@@ -352,7 +352,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> with BaseClass {
                           title: 'Success',
                           message: "Item added to cart successfully");
                     } catch (e) {
-                      print(e.toString());
+                      // print(e.toString());
                       Get.back();
                       showError(title: 'Error', message: e.toString());
                     }

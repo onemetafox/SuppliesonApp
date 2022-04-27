@@ -21,11 +21,11 @@ class GetBranchesController extends GetxController {
         "branches",
         headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'},
       );
-      print(response);
+      // print(response);
       branchesModel = BranchesModel.fromJson(response);
       update();
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       throw e.toString();
     }
   }

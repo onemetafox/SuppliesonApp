@@ -120,11 +120,11 @@ class BottomHomePage extends StatelessWidget with BaseClass {
                       physics: NeverScrollableScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       itemBuilder: (BuildContext context, int position) {
-                        print(((getScreenWidth(context) / 2) /
-                            ((getScreenHeight(context) -
-                                    kToolbarHeight -
-                                    Dimensions.pixels_24) /
-                                2)));
+                        // print(((getScreenWidth(context) / 2) /
+                        //     ((getScreenHeight(context) -
+                        //             kToolbarHeight -
+                        //             Dimensions.pixels_24) /
+                        //         2)));
                         return GestureDetector(
                           onTap: () {
                             pushToNextScreenWithAnimation(context: context, destination: SuppliersListPage());

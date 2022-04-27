@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 class GetCityByIdController extends GetxController {
   Future<void> getCityByIdApi(Map<String, String> params, String cityId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.get(
         "systemCities/$cityId",
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

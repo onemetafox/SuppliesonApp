@@ -7,11 +7,11 @@ class CreateContactController extends GetxController {
 
   Future<void> createContactApi(Map<String, String> params,String contactId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.post(
         "contacts",
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

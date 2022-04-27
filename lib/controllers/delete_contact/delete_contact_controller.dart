@@ -7,11 +7,11 @@ class DeleteContactController extends GetxController {
 
   Future<void> deleteContactApi(Map<String, String> params,String contactId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.delete(
         "contacts/$contactId",
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

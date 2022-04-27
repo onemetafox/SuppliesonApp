@@ -26,7 +26,7 @@ class ApiService {
   static Future<dynamic> get(String url,
       {Map<String, String> headerMap}) async {
     dynamic responseJson;
-    print(_getUrl(url));
+    // print(_getUrl(url));
     try {
       var response;
       if(headerMap==null) {
@@ -46,8 +46,8 @@ class ApiService {
   static Future<dynamic> post(String url,
       {Map<String, dynamic> params, Map<String, String> headerMap}) async {
     dynamic responseJson;
-    print(_getUrl(url));
-    print(params);
+    // print(_getUrl(url));
+    // print(params);
     try {
       if (params == null) {
         throw FetchDataException('Parameters cannot be null');
@@ -75,10 +75,10 @@ class ApiService {
   static Future<dynamic> postWithQueryParameter(String url,
       {Map<String, dynamic> params, Map<String, String> headerMap}) async {
     dynamic responseJson;
-    print(_getUrl(url));
-    print(params);
+    // print(_getUrl(url));
+    // print(params);
     try {
-      print(_getUrlWithQueryParameter(url,params));
+      // print(_getUrlWithQueryParameter(url,params));
       var response;
       if(headerMap==null) {
         response = await http.post(_getUrlWithQueryParameter(url,params)/*,body: params,*/);
@@ -105,7 +105,7 @@ class ApiService {
   static Future<dynamic> put(String url,
       {Map<String, String> params, Map<String, String> headerMap}) async {
     dynamic responseJson;
-    print(_getUrl(url));
+    // print(_getUrl(url));
     try {
       var response;
       if (params == null) {
@@ -127,7 +127,7 @@ class ApiService {
   static Future<dynamic> delete(String url,
       {Map<String, String> headerMap,Map<String, dynamic> params}) async {
     dynamic responseJson;
-    print(_getUrl(url));
+    // print(_getUrl(url));
     try {
       var response;
       if(headerMap==null) {
@@ -147,15 +147,15 @@ class ApiService {
   @visibleForTesting
   static dynamic returnResponse(http.Response response) {
     dynamic responseJson = jsonDecode(response.body);
-   print(response.body.toString());
-print(responseJson['code'].toString());
+  //  print(response.body.toString());
+// print(responseJson['code'].toString());
     int statusCode;
     if (responseJson['code'] != null) {
       statusCode = responseJson['code'] as int;
     } else {
       statusCode = response.statusCode;
     }
-    print(responseJson);
+    // print(responseJson);
     switch (/*response.statusCode*/ statusCode) {
 
       case 200:

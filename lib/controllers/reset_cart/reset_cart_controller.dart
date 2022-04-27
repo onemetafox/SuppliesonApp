@@ -6,12 +6,12 @@ class ResetCartController extends GetxController {
   Future<void> resetCartApi(
       Map<String, String> params, String cartId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.delete(
         "carts/$cartId",
         params: params,
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

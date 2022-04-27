@@ -8,7 +8,7 @@ class RemoveCartProductController extends GetxController {
       final response = await ApiService.delete(
         "carts/product/$productId",
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

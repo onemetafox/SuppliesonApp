@@ -90,7 +90,7 @@ class _BranchWidgetState extends State<BranchWidget> with BaseClass {
                           ),
                           InkWell(
                             onTap: () {
-                              print(value.getSelectedIndex);
+                              // print(value.getSelectedIndex);
                               if (value.getSelectedIndex == -1) {
                                 showError(
                                     title: 'Branch',

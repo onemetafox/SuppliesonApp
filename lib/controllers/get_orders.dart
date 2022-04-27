@@ -21,7 +21,7 @@ class GetOrdersController extends GetxController {
       final response = await ApiService.get("orders?skip=0&limit=30&supplierId=5f1a9c45cce33f65397fa7eb", headerMap: {
         'Authorization': 'Bearer ${userDataModel.authToken}'
       });
-      print(response);
+      // print(response);
       getOrdersModel = GetOrdersModel.fromJson(response);
       update();
     } catch (e) {

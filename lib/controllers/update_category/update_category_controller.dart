@@ -7,12 +7,12 @@ class UpdateCategoryController extends GetxController {
 
   Future<void> updateCategoryApi(Map<String, String> params,String categoryId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.put(
         "categories/$categoryId",
         params: params,
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

@@ -6,12 +6,12 @@ class GetCartBySupplierIdtController extends GetxController {
   Future<void> getCartBySupplierIdApi(
       Map<String, String> params, String supplierId) async {
     try {
-      print(params);
+      // print(params);
       final response = await ApiService.delete(
         "carts/supplier/$supplierId",
         params: params,
       );
-      print(response);
+      // print(response);
       return LoginModel.fromJson(response);
     } catch (error) {
       throw error.toString();

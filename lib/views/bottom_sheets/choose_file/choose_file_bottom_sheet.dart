@@ -74,7 +74,7 @@ class ChooseFileBottomSheet {
         return File(pickedFile.path);
       }
     } catch (error) {
-      print('No Image Selected');
+      // print('No Image Selected');
       throw error.toString();
     }
   }
