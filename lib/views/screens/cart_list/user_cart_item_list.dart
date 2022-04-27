@@ -250,7 +250,7 @@ class _ItemCartListPageState extends State<ItemCartListPage> with BaseClass {
                                                 onTap: () async {
                                                   showCircularDialog(context);
                                                   try {
-
+                                                    print(value);
                                                     await value
                                                         .removeCartProductApi(
                                                             value.cartListModel
@@ -258,8 +258,8 @@ class _ItemCartListPageState extends State<ItemCartListPage> with BaseClass {
                                                                 .elementAt(0)
                                                                 .cart
                                                                 .products
-                                                                .elementAt(
-                                                                    index)
+                                                                .elementAt(index)
+                                                                .product
                                                                 .Id,
                                                             index);
                                                     Get.back();

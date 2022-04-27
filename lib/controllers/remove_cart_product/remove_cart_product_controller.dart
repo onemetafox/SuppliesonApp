@@ -3,7 +3,7 @@ import 'package:customer_end/services/api_service.dart';
 import 'package:get/get.dart';
 
 class RemoveCartProductController extends GetxController {
- /* Future<void> removeCartProductApi(String productId) async {
+ Future<void> removeCartProductApi(String productId) async {
     try {
       final response = await ApiService.delete(
         "carts/product/$productId",
@@ -13,5 +13,5 @@ class RemoveCartProductController extends GetxController {
     } catch (error) {
       throw error.toString();
     }
-  }*/
+  }
 }
