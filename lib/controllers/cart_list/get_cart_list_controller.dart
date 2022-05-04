@@ -1,6 +1,6 @@
 import 'package:customer_end/models/cart_list/cart_list_model.dart';
-import 'package:customer_end/models/category_list/category_list_model.dart';
-import 'package:customer_end/models/login/login_model.dart';
+// import 'package:customer_end/models/category_list/category_list_model.dart';
+// import 'package:customer_end/models/login/login_model.dart';
 import 'package:customer_end/services/api_service.dart';
 import 'package:get/get.dart';
 
@@ -35,10 +35,8 @@ class GetCartListController extends GetxController {
           ? Get.find<GetSharedPref>()
           : Get.put(GetSharedPref());
       UserDataModel userDataModel = await getSharedPref.getUserData();
-      final response = await ApiService.delete(
-        "carts/product/$productId",
-        headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'},
-      );
+      // final response = await ApiService.delete("carts/product/$productId", headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
+      await ApiService.delete("carts/product/$productId", headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
       // print(response);
       cartListModel.data.elementAt(0).cart.products.removeAt(index);
       update();
@@ -54,10 +52,8 @@ class GetCartListController extends GetxController {
           ? Get.find<GetSharedPref>()
           : Get.put(GetSharedPref());
       UserDataModel userDataModel = await getSharedPref.getUserData();
-      final response = await ApiService.put(
-        "carts/product/$productId?quantity=$count",
-        headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'},
-      );
+      // final response = await ApiService.put("carts/product/$productId?quantity=$count", headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
+      await ApiService.put("carts/product/$productId?quantity=$count", headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
       // print(response);
       cartListModel.data.elementAt(0).cart.products.removeAt(index);
       update();

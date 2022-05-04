@@ -1,4 +1,4 @@
-import 'dart:convert';
+// import 'dart:convert';
 
 import 'package:customer_end/services/api_service.dart';
 import 'package:get/get.dart';
@@ -12,10 +12,8 @@ class RegisterController extends GetxController {
   Future<void> registerApi(Map<String, String> params) async {
     try {
       // print(params);
-      final response = await ApiService.postWithQueryParameter(
-        "suppliers",
-        params: params,
-      );
+      // final response = await ApiService.postWithQueryParameter("suppliers", params: params);
+      await ApiService.postWithQueryParameter("suppliers", params: params);
 
     } catch (error) {
       // print(error);

@@ -19,7 +19,6 @@ class _BranchWidgetState extends State<BranchWidget> with BaseClass {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _getBranchesController.getBranchesApi();
   }

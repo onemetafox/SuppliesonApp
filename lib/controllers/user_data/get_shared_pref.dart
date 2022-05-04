@@ -43,8 +43,10 @@ class GetSharedPref extends GetxController {
   UserDataModel get userDataModel => _userDataModel;
 
   loadProfileSharedPreference() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    UserDataModel userProfileModel = new UserDataModel();
+    // SharedPreferences pref = await SharedPreferences.getInstance();
+    await SharedPreferences.getInstance();
+
+    // UserDataModel userProfileModel = new UserDataModel();
   }
 
   loadPreference() async {
@@ -58,7 +60,7 @@ class GetSharedPref extends GetxController {
   }
 
   clearPreference() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
+    // SharedPreferences pref = await SharedPreferences.getInstance();
     UserDataModel model = new UserDataModel();
     model.isLoggedIn = false;
     model.userId = "";

@@ -9,7 +9,7 @@ import '../../../controllers/cart_list/get_cart_list_controller.dart';
 import '../../../controllers/checkout_cart/checkout_cart_controller.dart';
 import '../../../controllers/remove_cart_product/remove_cart_product_controller.dart';
 import '../../../utils/app_colors.dart';
-import '../../../utils/app_images.dart';
+// import '../../../utils/app_images.dart';
 
 class ItemCartListPage extends StatefulWidget {
   final String supplierId;
@@ -45,7 +45,6 @@ class _ItemCartListPageState extends State<ItemCartListPage> with BaseClass {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     _getCartListController.getCartListApi();

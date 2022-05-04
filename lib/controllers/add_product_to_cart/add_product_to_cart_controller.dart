@@ -1,4 +1,4 @@
-import 'package:customer_end/models/login/login_model.dart';
+// import 'package:customer_end/models/login/login_model.dart';
 import 'package:customer_end/services/api_service.dart';
 import 'package:get/get.dart';
 
@@ -13,9 +13,8 @@ class AddProductToCartController extends GetxController {
           ? Get.find<GetSharedPref>()
           : Get.put(GetSharedPref());
       UserDataModel userDataModel = await getSharedPref.getUserData();
-      final response = await ApiService.post("carts",
-          params: params,
-          headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
+      // final response = await ApiService.post("carts", params: params, headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
+      await ApiService.post("carts", params: params, headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
       // print(response);
       update();
       //  return LoginModel.fromJson(response);

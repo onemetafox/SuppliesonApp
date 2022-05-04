@@ -1,4 +1,4 @@
-import 'package:customer_end/models/login/login_model.dart';
+// import 'package:customer_end/models/login/login_model.dart';
 import 'package:customer_end/services/api_service.dart';
 import 'package:get/get.dart';
 
@@ -15,10 +15,8 @@ class CheckOutCartController extends GetxController {
       // print(cartId);
       // print(branchId);
       // print('Bearer ${userDataModel.authToken}');
-      final response = await ApiService.postWithQueryParameter(
-        "carts/checkout/$cartId?branchId=$branchId",
-        headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'},
-      );
+      // final response = await ApiService.postWithQueryParameter("carts/checkout/$cartId?branchId=$branchId", headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
+      await ApiService.postWithQueryParameter("carts/checkout/$cartId?branchId=$branchId", headerMap: {'Authorization': 'Bearer ${userDataModel.authToken}'});
       // print(response);
     } catch (error) {
       // print(error.toString());

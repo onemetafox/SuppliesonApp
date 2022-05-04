@@ -26,7 +26,6 @@ class RegisterCustomPaint extends CustomPainter  {
 
   @override
   void paint(Canvas canvas, Size size) {
-    // TODO: implement paint
 
     canvas.drawCircle(Offset(Get.width-50, 20), 60, _paint);
     canvas.drawCircle(Offset(Get.width, 0), 40, _semiPaint);
@@ -35,7 +34,6 @@ class RegisterCustomPaint extends CustomPainter  {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    // TODO: implement shouldRepaint
     return false;
   }
 }

@@ -25,7 +25,6 @@ class LoginCustomPaint extends CustomPainter  {
 
   @override
   void paint(Canvas canvas, Size size) {
-    // TODO: implement paint
 
     canvas.drawCircle(Offset(70, Get.height * 0.25), 90, _paint);
     canvas.drawCircle(Offset(10, Get.height * 0.18), 30, _semiPaint);
@@ -34,7 +33,6 @@ class LoginCustomPaint extends CustomPainter  {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    // TODO: implement shouldRepaint
     return false;
   }
 }

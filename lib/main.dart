@@ -1,6 +1,6 @@
 
 import 'package:customer_end/utils/size_config.dart';
-import 'package:customer_end/views/screens/login/login_page.dart';
+// import 'package:customer_end/views/screens/login/login_page.dart';
 import 'package:customer_end/views/screens/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

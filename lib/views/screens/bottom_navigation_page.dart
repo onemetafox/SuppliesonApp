@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:rolling_nav_bar/rolling_nav_bar.dart';
 
 import 'accounts/accounts_page.dart';
-import 'home_module/bottom_home_page.dart';
+// import 'home_module/bottom_home_page.dart';
 import 'more_module/bottom_more_page.dart';
 import 'notification_module/bottom_notification_page.dart';
-import 'orders_module/bottom_order_page.dart';
+// import 'orders_module/bottom_order_page.dart';
 
 class HomeBasePage extends StatefulWidget {
   @override

@@ -11,7 +11,7 @@ class CheckLoginController extends GetxController {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     String prefData = prefs.getString("userData");
     if (prefData != null) {
-      var response = json.decode(prefData);
+      // var response = json.decode(prefData);
       var result =
           UserDataModel.fromJson(json.decode(prefs.getString("userData")));
 
@@ -31,7 +31,6 @@ class CheckLoginController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     Future.delayed(const Duration(milliseconds: 1500), () {
       checkLogin();
